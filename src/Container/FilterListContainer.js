@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import FilterList from "../compoments/FilterList"
 import { changeStatus } from '../Actions'
+import { apiChangeStatus } from '../Api/TodoResourceApi'
 const mapStateToProps = (state, ownProps) => {
     return {
         status: state.status
@@ -8,7 +9,9 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onChangeStatus: (status) => dispatch(changeStatus(status))
+        onChangeStatus: (status) => {
+                dispatch(changeStatus(status,apiChangeStatus(status)))
+        }
     }
 }
 
