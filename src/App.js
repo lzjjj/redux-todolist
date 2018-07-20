@@ -2,48 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import AddItem from "./Container/AddItemContainer"
 import TodoList from "./Container/TodoListContainer"
-import FilterList from "./compoments/FilterList"
+import FilterList from "./Container/FilterListContainer"
 
 class App extends Component {
   constructor(props) {
     super(props)
-    // this.state = {
-    //   todoList: [],
-    //   status: "all"
-    // }
   }
-  
-  // addToDoList = (e) => {
-  //   let todoList = this.props.todoList
-  //   todoList.push({ isComplete: false, content: e, id: this.generateUUID() })
-  //   this.setState({
-  //     todoList
-  //   })
-  // }
-  // checkItem = (e) => {
-  //   this.setState({
-  //     todoList: e
-  //   })
 
-  // }
-  // showTodoList = (statusType) => {
-  //   let list = this.props.todoList
-  //   let type = "all"
-  //   if (statusType) {
-  //     type = statusType
-  //   }
-  //   if (type === "complete") {
-  //     list = list.filter(i => i.isComplete == true)
-  //   } else if (type === "active") {
-  //     list = list.filter(i => i.isComplete == false)
-  //   }
-  //   return list
-  // }
-  // changeStatus = (type) => {
-  //   this.setState({
-  //     status: type
-  //   })
-  // }
   render() {
     return (
       <div className="container">
@@ -56,7 +21,7 @@ class App extends Component {
         <div >
           <AddItem addToDoList={(e) => this.addToDoList(e)} />
           <TodoList />
-          {/* <FilterList changeStatus = {(e)=>this.changeStatus(e)} status={this.state.status}/> */}
+          <FilterList />
         </div >
 
       </div >

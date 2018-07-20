@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
 class FilterList extends Component {
-    constructor(){
-        super();
-    }
-    changeStatus=(e)=>{
-        this.props.changeStatus(e)
+    constructor(props){
+        super(props);
     }
   render() {
    
@@ -14,15 +11,15 @@ class FilterList extends Component {
             <ul className="filters">
               <li>
                 <a href="#" data-filter="all" className={this.props.status==="all"? "selected" :""}
-                  onClick={()=>this.changeStatus('all')}>ALL</a>
+                  onClick={()=>this.props.onChangeStatus('all')}>ALL</a>
               </li>
               <li>
                 <a href="#" data-filter="active" className={this.props.status==="active"? "selected" :""}
-                  onClick={()=>this.changeStatus('active')}>Active</a>
+                  onClick={()=>this.props.onChangeStatus('active')}>Active</a>
               </li>
               <li>
                 <a href="#" data-filter="complete" className={this.props.status==="complete"? "selected" :""}
-                  onClick={()=>this.changeStatus('complete')}>Complete</a>
+                  onClick={()=>this.props.onChangeStatus('complete')}>Complete</a>
               </li>
             </ul>
           </div >
