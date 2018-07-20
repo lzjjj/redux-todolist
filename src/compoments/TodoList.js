@@ -20,26 +20,13 @@ class TodoList extends Component {
       this.props.onEditItemContent(itemId, event.target.innerText)
     }
   }
-  showTodoList = (statusType) => {
-    let list = this.props.todoList
-    let type = "all"
-    if (statusType) {
-      type = statusType
-    }
-    if (type === "complete") {
-      list = list.filter(i => i.isComplete == true)
-    } else if (type === "active") {
-      list = list.filter(i => i.isComplete == false)
-    }
-    return list
-  }
+  
   render() {
     return (
       <div >
         <ol>
           {
-            this.showTodoList(this.props.status).map((i, index) => {
-              console.log(this.props.todoList)
+            this.props.todoList.map(i => {
               return (<li
                 className={i.isComplete ? "checked" : ""}
                 key={i.id}

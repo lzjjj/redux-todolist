@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import TodoList from "../compoments/TodoList"
 import { checkItem, editItemContent } from '../Actions'
+import FilterListApi from "../Api/FilterTodoList"
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        todoList: state.todoList,
-        status: state.status
+        todoList: FilterListApi(state.todoList,state.status)
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
